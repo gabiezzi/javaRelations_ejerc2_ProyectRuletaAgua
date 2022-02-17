@@ -14,8 +14,8 @@ import entity.RevolverAgua;
  */
 public interface ServicioJugador {
     
-    public Jugador ingresaJugadorNuevo();
-    public boolean disparo(Jugador jugador, int posicionActual,int posicionAgua);   
+    public Jugador ingresaJugadorNuevo(int id);
+    public boolean disparo(Jugador jugador, RevolverAgua nuevoRevolver);   
     
     
 }

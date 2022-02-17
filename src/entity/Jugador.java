@@ -15,12 +15,12 @@ public class Jugador {
 
     public Jugador(int id) {
       
-        this.id = id++;
+        this.id = id;
         this.mojado = false;
     }
 
     public Jugador() {
-        id = id++;
+        
         mojado = false;
         
     }

@@ -6,17 +6,13 @@
 package service;
 
 import entity.Juego;
-import entity.Jugador;
-import java.util.ArrayList;
 
-/**
- *
- * @author Gabi
- */
 public interface ServicioJuego {
-    
+
     public Juego llenarJuego();
-    public String ronda(boolean mojado);
-    public void menu();
-    
+
+    public boolean ronda(Juego nuevoJuego);
+
+    public void menu(Juego nuevoJuego);
+
 }

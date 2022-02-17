@@ -12,15 +12,19 @@ package entity;
 public class RevolverAgua {
     
     
-    private static int posicionActual;
-    private static int posicionAgua;
+    private int posicionActual;
+    private int posicionAgua;
 
     public RevolverAgua() {
         
-        this.posicionActual = (int)(Math.random()*(6-1+1)+1);
-        this.posicionAgua = (int)(Math.random()*(8-1+1)+1);
-        
     }
+
+    public RevolverAgua(int posicionActual, int posicionAgua) {
+        this.posicionActual = posicionActual;
+        this.posicionAgua = posicionAgua;
+    }
+    
+    
 
     public int getPosicionActual() {
         return posicionActual;

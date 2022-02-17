@@ -22,31 +22,26 @@ public class ServicioImplementJugador implements ServicioJugador {
         sc = new Scanner(System.in);
     }
 
-    
     @Override
-    public Jugador ingresaJugadorNuevo(){
-        
-        return new Jugador();
-    }
-    
-    
-    @Override
-    public boolean disparo(Jugador jugador, int posicionActual,int posicionAgua) {
+    public Jugador ingresaJugadorNuevo(int id) {
 
-        if (nuevoServicioRevolver.mojar(posicionActual, posicionAgua)) {
-            
-            jugador.setMojado(false);
-            
-            nuevoServicioRevolver.siguienteChorro(posicionActual);
-            
+        return new Jugador(id);
+    }
+
+    @Override
+    public boolean disparo(Jugador jugador, RevolverAgua nuevoRevolver) {
+
+        if (nuevoServicioRevolver.mojar(nuevoRevolver.getPosicionActual(),nuevoRevolver.getPosicionAgua())) {
+
+            jugador.setMojado(true);
+
             return true;
-            
 
         }
-        
-        
-        nuevoServicioRevolver.siguienteChorro(posicionActual);
 
+        nuevoRevolver.setPosicionActual(nuevoServicioRevolver.siguienteChorro(nuevoRevolver.getPosicionActual()));
+        
+        
         return false;
     }
 

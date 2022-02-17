@@ -22,13 +22,24 @@ public class ServicioImplementRevolverAgua implements ServicioRevolverAgua {
     @Override
     public RevolverAgua llenarRevolver(){
 
-        return new RevolverAgua();
+        int posicionActual = (int)(Math.random()*6+1);
+        int posicionAgua = (int)(Math.random()*6+1);
+        
+        System.out.println("posicionAgua = " + posicionAgua);
+        System.out.println("posicionActual = " + posicionActual);
+        
+        return new RevolverAgua(posicionActual, posicionAgua);
     }
     
     @Override
     public int siguienteChorro(int posicionActual) {
-
-        return posicionActual+1;
+        
+        if(posicionActual == 6)
+        posicionActual = 1;
+        else{
+          posicionActual= posicionActual +1;
+        }
+    return posicionActual;
     }
 
 }
